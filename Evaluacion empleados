@@ -1,0 +1,18 @@
+fun revision (){
+    println("Ingrese la puntuación de su evaluación")
+    var puntuacion  = readln()!!.toInt()
+    println("Ingrese su salario mensual")
+    var salario = readln()!!.toInt()
+    if (0<= puntuacion && puntuacion <= 3){
+        println("Su rendimiento es insuficiente y su salario es ${(puntuacion*salario)/10}")
+    }
+    else if (puntuacion <= 6){
+        println("Su rendimiento es  aceptable y su salario es ${(puntuacion*salario)/10}")
+    }
+        else {
+        println("Su rendimiento es meritorio y su salario es ${(puntuacion*salario)/10}")
+    }
+}
+fun main() {
+    revision()
+}
