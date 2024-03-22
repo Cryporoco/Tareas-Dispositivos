@@ -1,5 +1,5 @@
 fun calculadora(){
-println("Bienvenido a la calculadora") // por Sebastian, calculadora con las 4 funciones básicas|| 21/03 a 22/03 edición
+println("Bienvenido a la calculadora") // por Sebastian, calculadora con las 4 funciones básicas|| 21/03 a 22/03 creación
     println("¿Cuántos números desea operar?")
     var cantidad = readln()!!.toInt(); var c =0
     println("1. Suma ");println("2. Resta");println("3. Multiplicación");println("4. Dividir");println("5. Salir")
