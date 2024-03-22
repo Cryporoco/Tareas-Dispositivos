@@ -1,5 +1,5 @@
 fun edadest(){
-    println("¿Cuantos alumnos hay en el salón?")
+    println("¿Cuantos alumnos hay en el salón?") // por Sebastian David leer edadde un grupo de alumnos y encontrar el mayor y menor||21/03 a 22/03 creación
     var menor = 10000
     var mayor = -1
     var alumnos = readln()!!.toInt()
