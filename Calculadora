@@ -1,5 +1,5 @@
 fun calculadora(){
-println("Bienvenido a la calculadora")
+println("Bienvenido a la calculadora") // por Sebastian, calculadora con las 4 funciones básicas|| 21/03 a 22/03
     println("¿Cuántos números desea operar?")
     var cantidad = readln()!!.toInt(); var c =0
     println("1. Suma ");println("2. Resta");println("3. Multiplicación");println("4. Dividir");println("5. Salir")
@@ -13,7 +13,7 @@ var asigno = readln()!!.toInt()
             println("El resultado es: $c")
         }
         2 -> {println( "Escogió restar");println("Ingrese sus números")
-            for (a in 1 .. cantidad){
+            for (a in 2 .. cantidad){
                 var num = readln()!!.toInt()
                  c= c-num
             }
@@ -31,7 +31,13 @@ var asigno = readln()!!.toInt()
         4 -> {println( "Escogió dividir");println("Ingrese sus números")
             for (a in 1 .. cantidad){
                 var num = readln()!!.toInt()
-                c= c/num
+                if (num != 0) {
+                    c /= num
+                } else {
+                    println("No se puede poner 0 en el denominador")
+                    return
+                }
+            }
             }
         }
         5 -> {println( "Ha salido")}
