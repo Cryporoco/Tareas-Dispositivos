@@ -1,0 +1,26 @@
+fun adivinar(){
+    var num =1..30
+    var randum = num.random()
+    println("Advine el número entre 1 y 30")
+    var a= 1
+    while (a < 6 ){
+        var jugador = readln()!!.toInt()
+        if (jugador == randum){
+            println("Has ganado")
+            a = a +10
+        }
+        else if ( jugador < randum){
+            println("El número es mayor")
+            a++
+        }
+        else if (randum  < jugador){
+            println("El número es menor")
+            a++
+        }
+    }
+    
+    println("El número es $randum")
+}
+fun main() {
+    adivinar()
+}
