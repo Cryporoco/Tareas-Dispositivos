@@ -1,5 +1,5 @@
 fun revision (){
-    println("Ingrese la puntuación de su evaluación")
+    println("Ingrese la puntuación de su evaluación") // por Sebastian David, lee el salario y puntuación y da el valor del nuevo salario|| 21/03 A 22/03 creación
     var puntuacion  = readln()!!.toInt()
     println("Ingrese su salario mensual")
     var salario = readln()!!.toInt()
