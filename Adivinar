@@ -1,5 +1,5 @@
 fun adivinar(){
-    var num =1..30 // por Sebastian David, el usuario debe adivinar un numero entre 1 y 30||21/03 a 21/03
+    var num =1..30 // por Sebastian David, el usuario debe adivinar un numero entre 1 y 30||21/03 a 22/03 creación
     var randum = num.random()
     println("Advine el número entre 1 y 30")
     var a= 1
