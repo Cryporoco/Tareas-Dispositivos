@@ -1,0 +1,95 @@
+//por Sebastian David|| 29 /03 a 29/03 || Sistema para alquiilar un vehpiculo
+interface alquilable{//Interfas para alquilar un vehiculo con los requisitos necesarios
+    fun requisitos(){
+    }
+ }
+ interface tiempo{ //Cuanto pagara por el tiempo de prestado
+    fun tiempodinero( tarifa:Int){ //parametro fijo para el pago
+    }
+ }
+var condicion = "" //variable condicional para el prestamo
+//clases hijas correspondiente al tipo de vehiculo y las funciones a cada una
+ class Moto() :alquilable, tiempo{
+     override fun requisitos() {
+         println("Cuenta con la mayoría de edad si o no")
+         var pregunta = readln()
+         println("Cuenta con licencia de conducir si o no")
+         var pregunta2 = readln()
+         if (pregunta2=="si" && pregunta=="si"){
+             println("Puede conducir")
+             condicion="si"
+         }
+     }
+
+     override fun tiempodinero(tarifa: Int) {
+         if (condicion=="si"){
+             println("Cuantos dias estara con el carro (La tarifa es por dia)")
+             var tiempo = readln()!!.toInt()
+             println("El precio será de ${tiempo*tarifa}")
+         }
+     }
+ }
+ class Carro():alquilable,tiempo{
+     override fun requisitos() {
+         println("Cuenta con la mayoría de edad si o no")
+         var pregunta = readln()
+         println("Cuenta con licencia de conducir si o no")
+         var pregunta2 = readln()
+         if (pregunta2=="si" && pregunta=="si"){
+             println("Puede conducir")
+             condicion="si"
+         }
+     }
+
+     override fun tiempodinero(tarifa: Int) {
+         if (condicion=="si"){
+             println("Cuantos dias estara con el carro (La tarifa es por dia)")
+             var tiempo = readln()!!.toInt()
+             println("El precio será de ${tiempo*tarifa}")
+         }
+     }
+ }
+ class Van():alquilable,tiempo{
+     override fun requisitos() {
+         println("Cuenta con la mayoría de edad si o no")
+         var pregunta = readln()
+         println("Cuenta con licencia de conducir si o no")
+         var pregunta2 = readln()
+         if (pregunta2=="si" && pregunta=="si"){
+             println("Puede conducir")
+             condicion ="si"
+         }
+     }
+
+     override fun tiempodinero(tarifa: Int) {
+        if (condicion=="si"){
+            println("Cuantos dias estara con el carro (La tarifa es por dia)")
+            var tiempo = readln()!!.toInt()
+            println("El precio será de ${tiempo*tarifa}")
+        }
+     }
+ }
+fun main (){
+    var moto = Moto()
+    var carro=Carro()
+    var van = Van()
+    println("Que va a llevar moto, carro o van (minusculas)")
+    var pregunta = readln()
+    when(pregunta){ //when del tipo de carro escogido
+        "moto"->{
+            println("Moto")
+            moto.requisitos()
+            moto.tiempodinero(20)
+        }
+        "carro" ->{ println("Carro")
+            carro.requisitos()
+            carro.tiempodinero(40)
+        }
+        else ->{
+            println(" Van")
+            van.requisitos()
+            van.tiempodinero(60)
+        }
+    }
+
+}
