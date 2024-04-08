@@ -1,0 +1,43 @@
+class Banco (  saldo:Int=0, retiro: Int=0){ //por Sebastian David||25/03 a 26/03||Una cuenta con saldo y un máximo de retiro
+    var saldo = saldo 
+    var respuesta="si"
+    fun comprobar(){  //Comprubar que cuando el saldo sea bajo no se retire más de lo que hay
+        if (saldo >= retiro ){
+            saldo=saldo-retiro
+            println("Su saldo es: $saldo")
+            println("¿Desea seguir retirando? si/no")
+            respuesta = readln()
+        }
+        else if (retiro >= saldo){
+            println("No tiene saldo suficiente")
+            println("Su saldo es: $saldo")
+            println("¿Desea seguir retirando? si/no")
+            respuesta = readln()
+        }
+        else if (saldo==0){
+            println("No se puede seguir retirando")
+        }
+    }
+    var retiro = retiro
+        set(retirox){  // El retiro no puede ser mayor del que se menciona
+            if (retirox <= 50){
+                println("Si se puede retirar")
+                field=retirox
+
+            }
+            else{
+                println("No se puede retirar")
+            }
+        }
+}
+fun main(){
+    val cuenta = Banco(500)
+    println("Su saldo es: ${cuenta.saldo}") //En el main se puede retirar hasta donde se desee o no haya en la cuenta
+    var respuesta ="si"
+    while(respuesta == "si"){
+        println("Ingrese cuanto quiere retirar no mayor a 50")
+        cuenta.retiro= readln()!!.toInt()
+        cuenta.retiro
+        cuenta.comprobar()
+    }
+}
