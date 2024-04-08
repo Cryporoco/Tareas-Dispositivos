@@ -1,0 +1,21 @@
+fun yankenpo (){
+    var objetos = listOf("Piedra","Papel","Tijera") //por Sebastian David, escoge un string aleatorio y lo compara con el usuario para saber si ganó, perdió o ganó|| 21/03 a 22/04 creación
+    var randomobj = objetos.random()
+    println("¿Qué escoge? Piedra, Papel o Tijera")
+    var jugador = readln()
+    if (randomobj == jugador){
+        println(randomobj)
+        println("Empate")
+    }
+    else if (jugador == "Piedra" && randomobj=="Papel"||jugador == "Papel" && randomobj=="Tijera"||jugador == "Tijera" && randomobj=="Piedra"){
+        println(randomobj)
+        println("Pierde")
+    }
+    else{
+        println(randomobj)
+        println("Gana")
+    }
+}
+fun main() {
+    yankenpo()
+}
