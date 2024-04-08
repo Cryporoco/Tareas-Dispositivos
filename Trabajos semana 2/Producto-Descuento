@@ -1,0 +1,32 @@
+//por Sebastian David || 26/03 a 26/03|| Lee el precio de un producto y se le aplica un descuento
+class  Producto (precio: Int, descuento:Int=1){ // Se lee el producto y se deternina que no puede ser 0
+    var producto = precio
+        set(productox){
+            if (productox >0){
+                println( producto)
+                field= productox
+
+            }
+            else{
+                println("Ningun producto vale 0")
+            }
+
+        }
+    var descuento= descuento
+
+    fun preciof(){  // Calcula el precio
+
+        println("El precio final es: ${producto-(producto*(descuento*0.01))}")
+    }
+
+}
+fun main (){
+    var objeto = Producto( 20,2) // Se usa solo el descuento, el producto se lee el precio
+    println("Ingrese el precio del producto")
+    objeto.producto= readln()!!.toInt()
+    println(objeto.producto)
+    println("Descuento: ")
+    println(objeto.descuento)
+    objeto.preciof()
+
+}
