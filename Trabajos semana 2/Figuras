@@ -1,0 +1,45 @@
+//por Sebastian David || 26/03 a 26/03|| Sacar el area y perimetro de algunas figuras
+abstract class Figura (area: Int, perimetro:Int){ // Clase padre con donde se define la funcion de área y perímetro
+    var area =area
+    var perimetro= perimetro
+    open fun areayperimetro(){ // Leera lo necesario de cada figura para sacar su área y perimeto
+    }
+}
+class Cuadrado(area:Int,perimetro: Int):Figura(0,0){ //Clase hija para el cuadrado donde se lee el lado 
+    override fun areayperimetro(){ 
+        println("Cuadrado")
+        println("Ingrese el lado")
+        var lado = readln()!!.toInt()
+        println("El área es: ${lado*lado}")
+        println("El perímetro es: ${lado*4}")
+    }
+
+}
+class Rectangulo(area: Int,perimetro: Int):Figura(0,0){ // Clase hija para el rectángulo donde se lee la altura y la base
+    override fun areayperimetro() {
+        println("Rectángulo")
+        println("Ingrese base y altura")
+        var base = readln()!!.toInt();var altura= readln()!!.toInt()
+        println("El área es: ${base*altura}")
+        println("El perímetro es: ${(base*2)+(altura*2)}")
+    }
+}
+class Circulo(area: Int,perimetro: Int):Figura(0,0){  //Clase hoja que lee el radio y cuenta con una constante
+  val pi=3.14 //Constante aproximada para pi
+    override fun areayperimetro() {
+        println("Círculo")
+        println("Ingrese radio")
+        var radio = readln()!!.toInt()
+        println("El área es: ${pi*radio*radio}")
+        println("La longitud es: ${2*pi*radio}")
+    }
+}
+// Cada clase hija cuenta con la forma de sacar el área y perímetro de las figuras correspondientes
+fun main (){
+    var circulo = Circulo(3,2) //Uso los parámetros como placeholders
+    var rectangulo = Rectangulo(2,3)
+    var cuadrado = Cuadrado(2,3)
+    cuadrado.areayperimetro()
+    rectangulo.areayperimetro() 
+    circulo.areayperimetro()
+}
